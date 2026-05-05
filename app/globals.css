@@ -1,0 +1,280 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-syne: 'Syne', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #030712;
+  color: #f9fafb;
+  font-family: var(--font-syne);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0f1e;
+}
+::-webkit-scrollbar-thumb {
+  background: #4f46e5;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6366f1;
+}
+
+/* Selection */
+::selection {
+  background: rgba(99, 102, 241, 0.3);
+  color: #f9fafb;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-warm {
+  background: linear-gradient(135deg, #f59e0b 0%, #ec4899 50%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass card */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Grid overlay */
+.grid-overlay {
+  background-image:
+    linear-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Noise texture */
+.noise::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.02'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* Glow orbs */
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  opacity: 0.15;
+}
+
+/* Marquee */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Input focus ring */
+.input-field {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.input-field:focus {
+  outline: none;
+  border-color: rgba(99,102,241,0.6);
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+}
+
+/* Button shimmer */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 30%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+}
+.btn-primary:hover::after {
+  left: 130%;
+}
+
+/* ============================================================
+   LIGHT MODE OVERRIDES
+   (html without .dark class = light mode via next-themes)
+   ============================================================ */
+
+html:not(.dark) body {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+/* ── Dark background utilities ── */
+html:not(.dark) .bg-dark-900 { background-color: #f8fafc !important; }
+html:not(.dark) .bg-dark-800 { background-color: #f1f5f9 !important; }
+html:not(.dark) .bg-dark-700 { background-color: #e8eef4 !important; }
+
+/* ── Gradient stops that use dark shades ── */
+html:not(.dark) [class*="from-dark-"] {
+  --tw-gradient-from: #f8fafc var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgba(248,250,252,0) var(--tw-gradient-to-position) !important;
+}
+html:not(.dark) [class*="via-dark-"] {
+  --tw-gradient-stops: var(--tw-gradient-from), rgba(241,245,249,0.4) var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+}
+html:not(.dark) [class*="to-dark-"] {
+  --tw-gradient-to: #f8fafc var(--tw-gradient-to-position) !important;
+}
+
+/* ── Headings ── */
+html:not(.dark) h1,
+html:not(.dark) h2,
+html:not(.dark) h3,
+html:not(.dark) h4,
+html:not(.dark) h5 {
+  color: #0f172a !important;
+}
+/* Gradient text spans inside headings keep their gradient */
+html:not(.dark) .gradient-text,
+html:not(.dark) .gradient-text-warm {
+  color: transparent !important;
+}
+
+/* ── Gray text utilities ── */
+html:not(.dark) .text-gray-100 { color: #0f172a !important; }
+html:not(.dark) .text-gray-200 { color: #1e293b !important; }
+html:not(.dark) .text-gray-300 { color: #334155 !important; }
+html:not(.dark) .text-gray-400 { color: #475569 !important; }
+html:not(.dark) .text-gray-500 { color: #64748b !important; }
+html:not(.dark) .text-gray-600 { color: #6b7280 !important; }
+
+/* ── text-white: go dark unless inside a colored gradient element ── */
+html:not(.dark) .text-white { color: #0f172a !important; }
+
+/* Re-allow white text on gradient backgrounds (buttons, badges, avatars) */
+html:not(.dark) [class*="from-indigo"] .text-white,
+html:not(.dark) [class*="from-violet"] .text-white,
+html:not(.dark) [class*="from-cyan"] .text-white,
+html:not(.dark) [class*="from-emerald"] .text-white,
+html:not(.dark) [class*="from-rose"] .text-white,
+html:not(.dark) [class*="from-amber"] .text-white,
+html:not(.dark) [class*="from-blue"] .text-white,
+html:not(.dark) [class*="from-pink"] .text-white,
+html:not(.dark) .btn-primary .text-white,
+html:not(.dark) .btn-primary,
+html:not(.dark) [class*="!text-white"] { color: #ffffff !important; }
+
+/* Inline !text-white (Tailwind important modifier) */
+html:not(.dark) .\!text-white { color: #ffffff !important; }
+
+/* ── Low-opacity white backgrounds → soft dark tint ── */
+html:not(.dark) [class*="bg-white/"] { background-color: rgba(15,23,42,0.04) !important; }
+
+/* ── White borders → subtle dark border ── */
+html:not(.dark) [class*="border-white/"] { border-color: rgba(15,23,42,0.1) !important; }
+
+/* ── Glass cards ── */
+html:not(.dark) .glass {
+  background: rgba(255,255,255,0.75) !important;
+  border-color: rgba(15,23,42,0.08) !important;
+  box-shadow: 0 2px 16px rgba(15,23,42,0.06);
+}
+html:not(.dark) .glass-strong {
+  background: rgba(255,255,255,0.97) !important;
+  border-color: rgba(15,23,42,0.1) !important;
+  box-shadow: 0 8px 32px rgba(15,23,42,0.08);
+}
+
+/* ── Grid overlay ── */
+html:not(.dark) .grid-overlay {
+  background-image:
+    linear-gradient(rgba(99,102,241,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99,102,241,0.07) 1px, transparent 1px);
+}
+
+/* ── Glow orbs: subtle in light mode ── */
+html:not(.dark) .glow-orb { opacity: 0.06 !important; }
+
+/* ── Form inputs ── */
+html:not(.dark) .input-field {
+  background: rgba(15,23,42,0.03) !important;
+  border-color: rgba(15,23,42,0.12) !important;
+  color: #0f172a !important;
+}
+html:not(.dark) input,
+html:not(.dark) textarea,
+html:not(.dark) select {
+  color: #0f172a !important;
+}
+html:not(.dark) input::placeholder,
+html:not(.dark) textarea::placeholder { color: #94a3b8 !important; }
+
+/* ── Scrollbar ── */
+html:not(.dark) ::-webkit-scrollbar-track { background: #f1f5f9; }
+html:not(.dark) ::-webkit-scrollbar-thumb { background: #6366f1; }
+
+/* ── Selection ── */
+html:not(.dark) ::selection {
+  background: rgba(99,102,241,0.15);
+  color: #0f172a;
+}
+
+/* ── Section border lines ── */
+html:not(.dark) .border-y { border-color: rgba(15,23,42,0.08) !important; }
+html:not(.dark) footer { border-top-color: rgba(15,23,42,0.08) !important; }
+
+/* ── Arbitrary dark hex backgrounds ── */
+html:not(.dark) [class*="bg-[#0"] { background-color: #f1f5f9 !important; }
+
+/* ── Card box shadows ── */
+html:not(.dark) .shadow-card { box-shadow: 0 4px 24px rgba(15,23,42,0.08) !important; }
+html:not(.dark) .shadow-card-hover { box-shadow: 0 8px 40px rgba(99,102,241,0.15) !important; }
