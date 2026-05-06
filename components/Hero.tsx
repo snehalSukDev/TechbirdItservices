@@ -202,12 +202,12 @@ function MagneticButton({ href, children, primary }: { href: string; children: R
       onMouseMove={onMove}
       onMouseLeave={onLeave}
       whileHover={primary
-        ? { boxShadow: "0 0 44px rgba(99,102,241,0.6)", scale: 1.05 }
+        ? { boxShadow: "0 0 44px rgba(155,129,201,0.6)", scale: 1.05 }
         : { scale: 1.04 }
       }
       whileTap={{ scale: 0.95 }}
       className={primary
-        ? "btn-primary group flex items-center gap-2 px-7 py-3.5 text-base font-semibold text-white rounded-2xl bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 shadow-glow-sm transition-colors duration-300"
+        ? "btn-primary group flex items-center gap-2 px-7 py-3.5 text-base font-semibold text-white rounded-2xl bg-gradient-to-r from-[#9b81c9] to-[#7c64b1] hover:from-[#a890d0] hover:to-[#8a70bc] shadow-glow-sm transition-colors duration-300"
         : "group flex items-center gap-2 px-7 py-3.5 text-base font-medium text-gray-300 hover:text-white rounded-2xl glass border border-white/[0.08] hover:border-white/[0.2] hover:bg-white/[0.05] transition-all duration-300"
       }
     >
@@ -392,7 +392,7 @@ export default function Hero() {
             <div className="flex -space-x-2">
               {["RM", "PN", "AS", "SP"].map((initials, i) => (
                 <div key={i}
-                  className="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center text-[10px] font-bold !text-white border-2 border-dark-900"
+                  className="w-8 h-8 rounded-full bg-gradient-to-br from-[#9b81c9] to-[#7c64b1] flex items-center justify-center text-[10px] font-bold !text-white border-2 border-dark-900"
                 >
                   {initials}
                 </div>

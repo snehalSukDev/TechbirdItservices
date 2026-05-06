@@ -6,14 +6,15 @@ import About from "@/components/About";
 import Portfolio from "@/components/Portfolio";
 import Process from "@/components/Process";
 import Testimonials from "@/components/Testimonials";
-import Pricing from "@/components/Pricing";
 import Blog from "@/components/Blog";
-import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Chatbot from "@/components/Chatbot";
+import ForceScroll from "@/components/ForceScroll";
 
 export default function Home() {
   return (
     <main className="relative overflow-x-hidden">
+      <ForceScroll />
       <Navbar />
       <Hero />
       <TrustedBy />
@@ -22,10 +23,9 @@ export default function Home() {
       <Portfolio />
       <Process />
       <Testimonials />
-      {/* <Pricing /> */}
       <Blog />
-      {/* <Contact /> */}
       <Footer />
+      <Chatbot />
     </main>
   );
 }

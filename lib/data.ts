@@ -197,6 +197,15 @@ export const testimonials = [
     rating: 5,
     text: "From AI-powered patient analytics to HRMS integration, TechBird delivered end-to-end. Their team is responsive, technically sharp, and genuinely invested in your success.",
   },
+  {
+    id: 5,
+    name: "Sidhu Patel",
+    role: "SP Operations, MedServe",
+    avatar: "SP",
+    color: "from-rose-500 to-pink-500",
+    rating: 5,
+    text: "From AI-powered patient analytics to HRMS integration, TechBird delivered end-to-end. Their team is responsive, technically sharp, and genuinely invested in your success.",
+  },
 ];
 
 export const pricing = [

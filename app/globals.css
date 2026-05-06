@@ -8,6 +8,16 @@
   100% { background-position: 0% 50%; }
 }
 
+/* Service icon boxes — solid visible background + colored icon in light mode */
+html:not(.dark) .svc-icon {
+  background: rgba(155, 129, 201, 0.15) !important;
+  border-color: rgba(155, 129, 201, 0.3) !important;
+  box-shadow: none !important;
+}
+html:not(.dark) .svc-icon svg {
+  color: #7c64b1 !important;
+}
+
 .hero-gradient-anim {
   background: radial-gradient(ellipse at 20% 50%, rgba(99,102,241,0.16) 0%, transparent 55%),
               radial-gradient(ellipse at 80% 20%, rgba(139,92,246,0.13) 0%, transparent 55%),

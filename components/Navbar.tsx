@@ -68,7 +68,7 @@ export default function Navbar() {
                 {mounted && <ThemeToggle isDark={isDark} toggle={toggleTheme} />}
                 <a
                   href="#contact"
-                  className="btn-primary px-5 py-2 text-sm font-medium !text-white rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 shadow-glow-sm hover:shadow-glow-md transition-all duration-300"
+                  className="btn-primary px-5 py-2 text-sm font-medium !text-white rounded-xl bg-gradient-to-r from-[#9b81c9] to-[#7c64b1] hover:from-[#a890d0] hover:to-[#8a70bc] shadow-glow-sm hover:shadow-glow-md transition-all duration-300"
                 >
                   Get Started
                 </a>
@@ -106,7 +106,7 @@ export default function Navbar() {
                 {mounted && <ThemeToggle isDark={isDark} toggle={toggleTheme} compact />}
                 <a
                   href="#contact"
-                  className="btn-primary px-4 py-1.5 text-xs font-semibold !text-white rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 shadow-glow-sm transition-all duration-300 whitespace-nowrap"
+                  className="btn-primary px-4 py-1.5 text-xs font-semibold !text-white rounded-xl bg-gradient-to-r from-[#9b81c9] to-[#7c64b1] hover:from-[#a890d0] hover:to-[#8a70bc] shadow-glow-sm transition-all duration-300 whitespace-nowrap"
                 >
                   Get Started
                 </a>
@@ -141,7 +141,7 @@ export default function Navbar() {
                 <a
                   href="#contact"
                   onClick={() => setMobileOpen(false)}
-                  className="btn-primary block text-center px-5 py-3 text-sm font-medium !text-white rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600"
+                  className="btn-primary block text-center px-5 py-3 text-sm font-medium !text-white rounded-xl bg-gradient-to-r from-[#9b81c9] to-[#7c64b1]"
                 >
                   Get Started
                 </a>

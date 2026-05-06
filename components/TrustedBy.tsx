@@ -7,7 +7,7 @@ export default function TrustedBy() {
   const doubled = [...clients, ...clients];
 
   return (
-    <section className="py-16 relative overflow-hidden border-y border-white/[0.04]">
+    <section id="trustedby" className="py-16 relative overflow-hidden border-y border-white/[0.04]">
       <div className="absolute inset-0 bg-gradient-to-r from-dark-900 via-dark-800/50 to-dark-900" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">

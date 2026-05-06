@@ -49,7 +49,7 @@ export default function Footer() {
                 placeholder="your@email.com"
                 className="flex-1 min-w-0 px-4 py-2.5 rounded-xl text-sm text-white placeholder-gray-600 bg-white/[0.04] border border-white/[0.08] focus:border-indigo-500/40 outline-none transition-all"
               />
-              <button className="px-4 py-2.5 text-sm font-medium text-white rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 transition-all duration-300 flex-shrink-0">
+              <button className="px-4 py-2.5 text-sm font-medium !text-white rounded-xl bg-gradient-to-r from-[#9b81c9] to-[#7c64b1] hover:from-[#a890d0] hover:to-[#8a70bc] transition-all duration-300 flex-shrink-0">
                 Subscribe
               </button>
             </div>
@@ -100,10 +100,10 @@ export default function Footer() {
           </div>
 
           {/* Status indicator */}
-          <div className="flex items-center gap-2 text-xs text-gray-500">
+          {/* <div className="flex items-center gap-2 text-xs text-gray-500">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             All systems operational
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

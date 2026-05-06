@@ -106,7 +106,7 @@ export default function Process() {
           </p>
           <a
             href="#contact"
-            className="btn-primary inline-flex items-center gap-2 px-8 py-3.5 text-base font-semibold text-white rounded-2xl bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 shadow-glow-sm hover:shadow-glow-md transition-all duration-300"
+            className="btn-primary inline-flex items-center gap-2 px-8 py-3.5 text-base font-semibold text-white rounded-2xl bg-gradient-to-r from-[#9b81c9] to-[#7c64b1] hover:from-[#a890d0] hover:to-[#8a70bc] shadow-glow-sm hover:shadow-glow-md transition-all duration-300"
           >
             Start a Project
             <Rocket className="w-4 h-4" />
